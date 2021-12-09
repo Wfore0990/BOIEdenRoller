@@ -1,0 +1,4214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(59, 59, 59);
+                color: white;
+                font-weight: bold;
+            }
+
+              #roll-field {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+              }
+            .eden-card {
+                border: 1px solid lightgray;
+                width: 30%;
+            }
+        </style>
+    </head>
+<body>
+
+    <div class="flex-container">
+        <div id="roll-field">
+        </div>
+    </div>
+
+
+<script>
+
+
+    const items = {
+        "activeItems": [
+            {
+                "name": "The Bible",
+                "itemType": "Item",
+                "itemId": "33",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Book of Belial",
+                "itemType": "Item",
+                "itemId": "34",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Necronomicon",
+                "itemType": "Item",
+                "itemId": "35",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Poop",
+                "itemType": "Item",
+                "itemId": "36",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mr. Boom",
+                "itemType": "Item",
+                "itemId": "37",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Tammy's Head",
+                "itemType": "Item",
+                "itemId": "38",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mom's Bra",
+                "itemType": "Item",
+                "itemId": "39",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Kamikaze",
+                "itemType": "Item",
+                "itemId": "40",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mom's Pad",
+                "itemType": "Item",
+                "itemId": "41",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Bob's Rotten Head",
+                "itemType": "Item",
+                "itemId": "42",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Teleport",
+                "itemType": "Item",
+                "itemId": "44",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Yum Heart",
+                "itemType": "Item",
+                "itemId": "45",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Doctor's Remote",
+                "itemType": "Item",
+                "itemId": "47",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Shoop Da Whoop!",
+                "itemType": "Item",
+                "itemId": "49",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Lemon Mishap",
+                "itemType": "Item",
+                "itemId": "56",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Book of Shadows",
+                "itemType": "Item",
+                "itemId": "58",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Anarchist's Cookbook",
+                "itemType": "Item",
+                "itemId": "65",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Hourglass",
+                "itemType": "Item",
+                "itemId": "66",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "My Little Unicorn",
+                "itemType": "Item",
+                "itemId": "77",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Book of Revelations",
+                "itemType": "Item",
+                "itemId": "78",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Nail",
+                "itemType": "Item",
+                "itemId": "83",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "We Need To Go Deeper",
+                "itemType": "Item",
+                "itemId": "84",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Deck of Cards",
+                "itemType": "Item",
+                "itemId": "85",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Monstro's Tooth",
+                "itemType": "Item",
+                "itemId": "86",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Gamekid",
+                "itemType": "Item",
+                "itemId": "93",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Book of Sin",
+                "itemType": "Item",
+                "itemId": "97",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mom's Bottle of Pills",
+                "itemType": "Item",
+                "itemId": "102",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The D6",
+                "itemType": "Item",
+                "itemId": "105",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Pinking Shears",
+                "itemType": "Item",
+                "itemId": "107",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Bean",
+                "itemType": "Item",
+                "itemId": "111",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Monster Manual",
+                "itemType": "Item",
+                "itemId": "123",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Dead Sea Scrolls",
+                "itemType": "Item",
+                "itemId": "124",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Razor Blade",
+                "itemType": "Item",
+                "itemId": "126",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Forget Me Now",
+                "itemType": "Item",
+                "itemId": "127",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "A Pony",
+                "itemType": "Item",
+                "itemId": "130",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Guppy's Paw",
+                "itemType": "Item",
+                "itemId": "133",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "IV Bag",
+                "itemType": "Item",
+                "itemId": "135",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Best Friend",
+                "itemType": "Item",
+                "itemId": "136",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Remote Detonator",
+                "itemType": "Item",
+                "itemId": "137",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Guppy's Head",
+                "itemType": "Item",
+                "itemId": "145",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Prayer Card",
+                "itemType": "Item",
+                "itemId": "146",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Notched Axe",
+                "itemType": "Item",
+                "itemId": "147",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Crystal Ball",
+                "itemType": "Item",
+                "itemId": "158",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Crack The Sky",
+                "itemType": "Item",
+                "itemId": "160",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Candle",
+                "itemType": "Item",
+                "itemId": "164",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D20",
+                "itemType": "Item",
+                "itemId": "166",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Spider Butt",
+                "itemType": "Item",
+                "itemId": "171",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Dad's Key",
+                "itemType": "Item",
+                "itemId": "175",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Portable Slot",
+                "itemType": "Item",
+                "itemId": "177",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "White Pony",
+                "itemType": "Item",
+                "itemId": "181",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Blood Rights",
+                "itemType": "Item",
+                "itemId": "186",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Telepathy for Dummies",
+                "itemType": "Item",
+                "itemId": "192",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "How To Jump",
+                "itemType": "Item",
+                "itemId": "282",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D100",
+                "itemType": "Item",
+                "itemId": "283",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D4",
+                "itemType": "Item",
+                "itemId": "284",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D10",
+                "itemType": "Item",
+                "itemId": "285",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Blank Card",
+                "itemType": "Item",
+                "itemId": "286",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Book of Secrets",
+                "itemType": "Item",
+                "itemId": "287",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Box of Spiders",
+                "itemType": "Item",
+                "itemId": "288",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Red Candle",
+                "itemType": "Item",
+                "itemId": "289",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Jar",
+                "itemType": "Item",
+                "itemId": "290",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "FLUSH!",
+                "itemType": "Item",
+                "itemId": "291",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "The Satanic Bible",
+                "itemType": "Item",
+                "itemId": "292",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Head of Krampus",
+                "itemType": "Item",
+                "itemId": "293",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Butter Bean",
+                "itemType": "Item",
+                "itemId": "294",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Magic Fingers",
+                "itemType": "Item",
+                "itemId": "295",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Converter",
+                "itemType": "Item",
+                "itemId": "296",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Pandora's Box",
+                "itemType": "Item",
+                "itemId": "297",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Unicorn Stump",
+                "itemType": "Item",
+                "itemId": "298",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Isaac's Tears",
+                "itemType": "Item",
+                "itemId": "323",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Undefined",
+                "itemType": "Item",
+                "itemId": "324",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Scissors",
+                "itemType": "Item",
+                "itemId": "325",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Breath of Life",
+                "itemType": "Item",
+                "itemId": "326",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Boomerang",
+                "itemType": "Item",
+                "itemId": "338",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Diplopia",
+                "itemType": "Item",
+                "itemId": "347",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Placebo",
+                "itemType": "Item",
+                "itemId": "348",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Wooden Nickel",
+                "itemType": "Item",
+                "itemId": "349",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mega Bean",
+                "itemType": "Item",
+                "itemId": "351",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Glass Cannon",
+                "itemType": "Item",
+                "itemId": "352",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Box of Friends",
+                "itemType": "Item",
+                "itemId": "357",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Friendly Ball",
+                "itemType": "Item",
+                "itemId": "382",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Tear Detonator",
+                "itemType": "Item",
+                "itemId": "383",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D12",
+                "itemType": "Item",
+                "itemId": "386",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Ventricle Razor",
+                "itemType": "Item",
+                "itemId": "396",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D8",
+                "itemType": "Item",
+                "itemId": "406",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Teleport 2.0",
+                "itemType": "Item",
+                "itemId": "419",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Kidney Bean",
+                "itemType": "Item",
+                "itemId": "421",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Glowing Hour Glass",
+                "itemType": "Item",
+                "itemId": "422",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mine Crafter",
+                "itemType": "Item",
+                "itemId": "427",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Jar of Flies",
+                "itemType": "Item",
+                "itemId": "434",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D7",
+                "itemType": "Item",
+                "itemId": "437",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mom's Box",
+                "itemType": "Item",
+                "itemId": "439",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mega Blast",
+                "itemType": "Item",
+                "itemId": "441",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Plan C",
+                "itemType": "Item",
+                "itemId": "475",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D1",
+                "itemType": "Item",
+                "itemId": "476",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Void",
+                "itemType": "Item",
+                "itemId": "477",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Pause",
+                "itemType": "Item",
+                "itemId": "478",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Smelter",
+                "itemType": "Item",
+                "itemId": "479",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Compost",
+                "itemType": "Item",
+                "itemId": "480",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Dataminer",
+                "itemType": "Item",
+                "itemId": "481",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Clicker",
+                "itemType": "Item",
+                "itemId": "482",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "MaMa Mega!",
+                "itemType": "Item",
+                "itemId": "483",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Wait What?",
+                "itemType": "Item",
+                "itemId": "484",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Crooked Penny",
+                "itemType": "Item",
+                "itemId": "485",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Dull Razor",
+                "itemType": "Item",
+                "itemId": "486",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Potato Peeler",
+                "itemType": "Item",
+                "itemId": "487",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Metronome",
+                "itemType": "Item",
+                "itemId": "488",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "D infinity",
+                "itemType": "Item",
+                "itemId": "489",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Eden's Soul",
+                "itemType": "Item",
+                "itemId": "490",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Brown Nugget",
+                "itemType": "Item",
+                "itemId": "504",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Sharp Straw",
+                "itemType": "Item",
+                "itemId": "507",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Delirious",
+                "itemType": "Item",
+                "itemId": "510",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Black Hole",
+                "itemType": "Item",
+                "itemId": "512",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mystery Gift",
+                "itemType": "Item",
+                "itemId": "515",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Sprinkler",
+                "itemType": "Item",
+                "itemId": "516",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Coupon",
+                "itemType": "Item",
+                "itemId": "521",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Telekinesis",
+                "itemType": "Item",
+                "itemId": "522",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Moving Box",
+                "itemType": "Item",
+                "itemId": "523",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mr. ME!",
+                "itemType": "Item",
+                "itemId": "527",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Sacrificial Altar",
+                "itemType": "Item",
+                "itemId": "536",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Book of the Dead",
+                "itemType": "Item",
+                "itemId": "545",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Broken Shovel",
+                "itemType": "Item",
+                "itemId": "550",
+                "collectibleType": "Active"
+            },
+            {
+                "name": "Mom's Shovel",
+                "itemType": "Item",
+                "itemId": "552",
+                "collectibleType": "Active"
+            }
+        ],
+        "passiveItems": [
+            {
+                "name": "The Sad Onion",
+                "itemType": "Item",
+                "itemId": "1",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Inner Eye",
+                "itemType": "Item",
+                "itemId": "2",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spoon Bender",
+                "itemType": "Item",
+                "itemId": "3",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cricket's Head",
+                "itemType": "Item",
+                "itemId": "4",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "My Reflection",
+                "itemType": "Item",
+                "itemId": "5",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Number One",
+                "itemType": "Item",
+                "itemId": "6",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blood of the Martyr",
+                "itemType": "Item",
+                "itemId": "7",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Brother Bobby",
+                "itemType": "Item",
+                "itemId": "8",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Skatole",
+                "itemType": "Item",
+                "itemId": "9",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Halo of Flies",
+                "itemType": "Item",
+                "itemId": "10",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "1UP",
+                "itemType": "Item",
+                "itemId": "11",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Magic Mushroom",
+                "itemType": "Item",
+                "itemId": "12",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Virus",
+                "itemType": "Item",
+                "itemId": "13",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Roid Rage",
+                "itemType": "Item",
+                "itemId": "14",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "<3",
+                "itemType": "Item",
+                "itemId": "15",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Raw Liver",
+                "itemType": "Item",
+                "itemId": "16",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Skeleton Key",
+                "itemType": "Item",
+                "itemId": "17",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "A Dollar",
+                "itemType": "Item",
+                "itemId": "18",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Boom!",
+                "itemType": "Item",
+                "itemId": "19",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Transcendence",
+                "itemType": "Item",
+                "itemId": "20",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Compass",
+                "itemType": "Item",
+                "itemId": "21",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lunch",
+                "itemType": "Item",
+                "itemId": "22",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dinner",
+                "itemType": "Item",
+                "itemId": "23",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dessert",
+                "itemType": "Item",
+                "itemId": "24",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Breakfast",
+                "itemType": "Item",
+                "itemId": "25",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rotten Meat",
+                "itemType": "Item",
+                "itemId": "26",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Wooden Spoon",
+                "itemType": "Item",
+                "itemId": "27",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Belt",
+                "itemType": "Item",
+                "itemId": "28",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Underwear",
+                "itemType": "Item",
+                "itemId": "29",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Heels",
+                "itemType": "Item",
+                "itemId": "30",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Lipstick",
+                "itemType": "Item",
+                "itemId": "31",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Wire Coat Hanger",
+                "itemType": "Item",
+                "itemId": "32",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lucky Foot",
+                "itemType": "Item",
+                "itemId": "46",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cupid's Arrow",
+                "itemType": "Item",
+                "itemId": "48",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Steven",
+                "itemType": "Item",
+                "itemId": "50",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pentagram",
+                "itemType": "Item",
+                "itemId": "51",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dr. Fetus",
+                "itemType": "Item",
+                "itemId": "52",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Magneto",
+                "itemType": "Item",
+                "itemId": "53",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Treasure Map",
+                "itemType": "Item",
+                "itemId": "54",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Eye",
+                "itemType": "Item",
+                "itemId": "55",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Distant Admiration",
+                "itemType": "Item",
+                "itemId": "57",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Ladder",
+                "itemType": "Item",
+                "itemId": "60",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Charm of the Vampire",
+                "itemType": "Item",
+                "itemId": "62",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Battery",
+                "itemType": "Item",
+                "itemId": "63",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Steam Sale",
+                "itemType": "Item",
+                "itemId": "64",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sister Maggy",
+                "itemType": "Item",
+                "itemId": "67",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Technology",
+                "itemType": "Item",
+                "itemId": "68",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Chocolate Milk",
+                "itemType": "Item",
+                "itemId": "69",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Growth Hormones",
+                "itemType": "Item",
+                "itemId": "70",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mini Mush",
+                "itemType": "Item",
+                "itemId": "71",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rosary",
+                "itemType": "Item",
+                "itemId": "72",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cube of Meat",
+                "itemType": "Item",
+                "itemId": "73",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "A Quarter",
+                "itemType": "Item",
+                "itemId": "74",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "PhD",
+                "itemType": "Item",
+                "itemId": "75",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "X-Ray Vision",
+                "itemType": "Item",
+                "itemId": "76",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Mark",
+                "itemType": "Item",
+                "itemId": "79",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Pact",
+                "itemType": "Item",
+                "itemId": "80",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Cat",
+                "itemType": "Item",
+                "itemId": "81",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lord of the Pit",
+                "itemType": "Item",
+                "itemId": "82",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Loki's Horns",
+                "itemType": "Item",
+                "itemId": "87",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little Chubby",
+                "itemType": "Item",
+                "itemId": "88",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spider Bite",
+                "itemType": "Item",
+                "itemId": "89",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Small Rock",
+                "itemType": "Item",
+                "itemId": "90",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spelunker Hat",
+                "itemType": "Item",
+                "itemId": "91",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Super Bandage",
+                "itemType": "Item",
+                "itemId": "92",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sack of Pennies",
+                "itemType": "Item",
+                "itemId": "94",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Robo-Baby",
+                "itemType": "Item",
+                "itemId": "95",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little C.H.A.D.",
+                "itemType": "Item",
+                "itemId": "96",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Relic",
+                "itemType": "Item",
+                "itemId": "98",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little Gish",
+                "itemType": "Item",
+                "itemId": "99",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little Steven",
+                "itemType": "Item",
+                "itemId": "100",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Halo",
+                "itemType": "Item",
+                "itemId": "101",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Common Cold",
+                "itemType": "Item",
+                "itemId": "103",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Parasite",
+                "itemType": "Item",
+                "itemId": "104",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mr. Mega",
+                "itemType": "Item",
+                "itemId": "106",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Wafer",
+                "itemType": "Item",
+                "itemId": "108",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Money = Power",
+                "itemType": "Item",
+                "itemId": "109",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Contacts",
+                "itemType": "Item",
+                "itemId": "110",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Guardian Angel",
+                "itemType": "Item",
+                "itemId": "112",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Demon Baby",
+                "itemType": "Item",
+                "itemId": "113",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Knife",
+                "itemType": "Item",
+                "itemId": "114",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ouija Board",
+                "itemType": "Item",
+                "itemId": "115",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "9 Volt",
+                "itemType": "Item",
+                "itemId": "116",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Bird",
+                "itemType": "Item",
+                "itemId": "117",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Brimstone",
+                "itemType": "Item",
+                "itemId": "118",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blood Bag",
+                "itemType": "Item",
+                "itemId": "119",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Odd Mushroom (Thin)",
+                "itemType": "Item",
+                "itemId": "120",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Odd Mushroom (Large)",
+                "itemType": "Item",
+                "itemId": "121",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Whore of Babylon",
+                "itemType": "Item",
+                "itemId": "122",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bobby - Bomb",
+                "itemType": "Item",
+                "itemId": "125",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Forever Alone",
+                "itemType": "Item",
+                "itemId": "128",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bucket of Lard",
+                "itemType": "Item",
+                "itemId": "129",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bomb Bag",
+                "itemType": "Item",
+                "itemId": "131",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "A Lump of Coal",
+                "itemType": "Item",
+                "itemId": "132",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Guppy's Tail",
+                "itemType": "Item",
+                "itemId": "134",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Stigmata",
+                "itemType": "Item",
+                "itemId": "138",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Purse",
+                "itemType": "Item",
+                "itemId": "139",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bob's Curse",
+                "itemType": "Item",
+                "itemId": "140",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pageant Boy",
+                "itemType": "Item",
+                "itemId": "141",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Scapular",
+                "itemType": "Item",
+                "itemId": "142",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Speed Ball",
+                "itemType": "Item",
+                "itemId": "143",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bum Friend",
+                "itemType": "Item",
+                "itemId": "144",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Infestation",
+                "itemType": "Item",
+                "itemId": "148",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ipecac",
+                "itemType": "Item",
+                "itemId": "149",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tough Love",
+                "itemType": "Item",
+                "itemId": "150",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Mulligan",
+                "itemType": "Item",
+                "itemId": "151",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Technology 2",
+                "itemType": "Item",
+                "itemId": "152",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mutant Spider",
+                "itemType": "Item",
+                "itemId": "153",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Chemical Peel",
+                "itemType": "Item",
+                "itemId": "154",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Peeper",
+                "itemType": "Item",
+                "itemId": "155",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Habit",
+                "itemType": "Item",
+                "itemId": "156",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bloody Lust",
+                "itemType": "Item",
+                "itemId": "157",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spirit of the Night",
+                "itemType": "Item",
+                "itemId": "159",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ankh",
+                "itemType": "Item",
+                "itemId": "161",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Celtic Cross",
+                "itemType": "Item",
+                "itemId": "162",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ghost Baby",
+                "itemType": "Item",
+                "itemId": "163",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cat-O-Nine-Tails",
+                "itemType": "Item",
+                "itemId": "165",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Harlequin Baby",
+                "itemType": "Item",
+                "itemId": "167",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Epic Fetus",
+                "itemType": "Item",
+                "itemId": "168",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Polyphemus",
+                "itemType": "Item",
+                "itemId": "169",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Daddy Longlegs",
+                "itemType": "Item",
+                "itemId": "170",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sacrificial Dagger",
+                "itemType": "Item",
+                "itemId": "172",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mitre",
+                "itemType": "Item",
+                "itemId": "173",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rainbow Baby",
+                "itemType": "Item",
+                "itemId": "174",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Stem Cells",
+                "itemType": "Item",
+                "itemId": "176",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Holy Water",
+                "itemType": "Item",
+                "itemId": "178",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fate",
+                "itemType": "Item",
+                "itemId": "179",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Black Bean",
+                "itemType": "Item",
+                "itemId": "180",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sacred Heart",
+                "itemType": "Item",
+                "itemId": "182",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Toothpicks",
+                "itemType": "Item",
+                "itemId": "183",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Holy Grail",
+                "itemType": "Item",
+                "itemId": "184",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Dove",
+                "itemType": "Item",
+                "itemId": "185",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Guppy's Hairball",
+                "itemType": "Item",
+                "itemId": "187",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Abel",
+                "itemType": "Item",
+                "itemId": "188",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "SMB Super Fan",
+                "itemType": "Item",
+                "itemId": "189",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pyro",
+                "itemType": "Item",
+                "itemId": "190",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "3 Dollar Bill",
+                "itemType": "Item",
+                "itemId": "191",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "MEAT!",
+                "itemType": "Item",
+                "itemId": "193",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Magic 8 Ball",
+                "itemType": "Item",
+                "itemId": "194",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Coin Purse",
+                "itemType": "Item",
+                "itemId": "195",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Squeezy",
+                "itemType": "Item",
+                "itemId": "196",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Jesus Juice",
+                "itemType": "Item",
+                "itemId": "197",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Box",
+                "itemType": "Item",
+                "itemId": "198",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Key",
+                "itemType": "Item",
+                "itemId": "199",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Eyeshadow",
+                "itemType": "Item",
+                "itemId": "200",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Iron Bar",
+                "itemType": "Item",
+                "itemId": "201",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Midas Touch",
+                "itemType": "Item",
+                "itemId": "202",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Humbling Bundle",
+                "itemType": "Item",
+                "itemId": "203",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fanny pack",
+                "itemType": "Item",
+                "itemId": "204",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sharp plug",
+                "itemType": "Item",
+                "itemId": "205",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Guillotine",
+                "itemType": "Item",
+                "itemId": "206",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ball of Bandages",
+                "itemType": "Item",
+                "itemId": "207",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Champion Belt",
+                "itemType": "Item",
+                "itemId": "208",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Butt Bombs",
+                "itemType": "Item",
+                "itemId": "209",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Gnawed Leaf",
+                "itemType": "Item",
+                "itemId": "210",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spider Baby",
+                "itemType": "Item",
+                "itemId": "211",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Guppy's Collar",
+                "itemType": "Item",
+                "itemId": "212",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lost Contact",
+                "itemType": "Item",
+                "itemId": "213",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Anemic",
+                "itemType": "Item",
+                "itemId": "214",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Goat Head",
+                "itemType": "Item",
+                "itemId": "215",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ceremonial Robes",
+                "itemType": "Item",
+                "itemId": "216",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Wig",
+                "itemType": "Item",
+                "itemId": "217",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Placenta",
+                "itemType": "Item",
+                "itemId": "218",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Old Bandage",
+                "itemType": "Item",
+                "itemId": "219",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sad Bombs",
+                "itemType": "Item",
+                "itemId": "220",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rubber Cement",
+                "itemType": "Item",
+                "itemId": "221",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Anti-Gravity",
+                "itemType": "Item",
+                "itemId": "222",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pyromaniac",
+                "itemType": "Item",
+                "itemId": "223",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cricket's Body",
+                "itemType": "Item",
+                "itemId": "224",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Gimpy",
+                "itemType": "Item",
+                "itemId": "225",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Lotus",
+                "itemType": "Item",
+                "itemId": "226",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Piggy Bank",
+                "itemType": "Item",
+                "itemId": "227",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Perfume:",
+                "itemType": "Item",
+                "itemId": "228",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Monstro's Lung",
+                "itemType": "Item",
+                "itemId": "229",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Abaddon",
+                "itemType": "Item",
+                "itemId": "230",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ball of Tar",
+                "itemType": "Item",
+                "itemId": "231",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Stop Watch",
+                "itemType": "Item",
+                "itemId": "232",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tiny Planet",
+                "itemType": "Item",
+                "itemId": "233",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Infestation 2",
+                "itemType": "Item",
+                "itemId": "234",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "E. Coli",
+                "itemType": "Item",
+                "itemId": "236",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Death's Touch",
+                "itemType": "Item",
+                "itemId": "237",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Key Piece #1",
+                "itemType": "Item",
+                "itemId": "238",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Key Piece #2",
+                "itemType": "Item",
+                "itemId": "239",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Experimental Treatment",
+                "itemType": "Item",
+                "itemId": "240",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Contract From Below",
+                "itemType": "Item",
+                "itemId": "241",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Infamy",
+                "itemType": "Item",
+                "itemId": "242",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Trinity Shield",
+                "itemType": "Item",
+                "itemId": "243",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tech.5",
+                "itemType": "Item",
+                "itemId": "244",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "20/20",
+                "itemType": "Item",
+                "itemId": "245",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blue Map",
+                "itemType": "Item",
+                "itemId": "246",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "BFFS!",
+                "itemType": "Item",
+                "itemId": "247",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hive Mind",
+                "itemType": "Item",
+                "itemId": "248",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "There's Options",
+                "itemType": "Item",
+                "itemId": "249",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bogo Bombs",
+                "itemType": "Item",
+                "itemId": "250",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Starter Deck",
+                "itemType": "Item",
+                "itemId": "251",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little Baggy",
+                "itemType": "Item",
+                "itemId": "252",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Magic Scab",
+                "itemType": "Item",
+                "itemId": "253",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blood Clot",
+                "itemType": "Item",
+                "itemId": "254",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Screw",
+                "itemType": "Item",
+                "itemId": "255",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hot Bombs",
+                "itemType": "Item",
+                "itemId": "256",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fire Mind",
+                "itemType": "Item",
+                "itemId": "257",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Missing No.",
+                "itemType": "Item",
+                "itemId": "258",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dark Matter",
+                "itemType": "Item",
+                "itemId": "259",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Candle",
+                "itemType": "Item",
+                "itemId": "260",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Proptosis",
+                "itemType": "Item",
+                "itemId": "261",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Missing Page 2",
+                "itemType": "Item",
+                "itemId": "262",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Smart Fly",
+                "itemType": "Item",
+                "itemId": "264",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dry Baby",
+                "itemType": "Item",
+                "itemId": "265",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Juicy Sack",
+                "itemType": "Item",
+                "itemId": "266",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Robo-Baby 2.0",
+                "itemType": "Item",
+                "itemId": "267",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rotten Baby",
+                "itemType": "Item",
+                "itemId": "268",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Headless Baby",
+                "itemType": "Item",
+                "itemId": "269",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Leech",
+                "itemType": "Item",
+                "itemId": "270",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mystery Sack",
+                "itemType": "Item",
+                "itemId": "271",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "BBF",
+                "itemType": "Item",
+                "itemId": "272",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bob's Brain",
+                "itemType": "Item",
+                "itemId": "273",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Best Bud",
+                "itemType": "Item",
+                "itemId": "274",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Brimstone",
+                "itemType": "Item",
+                "itemId": "275",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Isaac's Heart",
+                "itemType": "Item",
+                "itemId": "276",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Haunt",
+                "itemType": "Item",
+                "itemId": "277",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dark Bum",
+                "itemType": "Item",
+                "itemId": "278",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Big Fan",
+                "itemType": "Item",
+                "itemId": "279",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sissy Long Legs",
+                "itemType": "Item",
+                "itemId": "280",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Punching Bag",
+                "itemType": "Item",
+                "itemId": "281",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Taurus",
+                "itemType": "Item",
+                "itemId": "299",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Aries",
+                "itemType": "Item",
+                "itemId": "300",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cancer",
+                "itemType": "Item",
+                "itemId": "301",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Leo",
+                "itemType": "Item",
+                "itemId": "302",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Virgo",
+                "itemType": "Item",
+                "itemId": "303",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Libra",
+                "itemType": "Item",
+                "itemId": "304",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Scorpio",
+                "itemType": "Item",
+                "itemId": "305",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sagittarius",
+                "itemType": "Item",
+                "itemId": "306",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Capricorn",
+                "itemType": "Item",
+                "itemId": "307",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Aquarius",
+                "itemType": "Item",
+                "itemId": "308",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pisces",
+                "itemType": "Item",
+                "itemId": "309",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eve's Mascara",
+                "itemType": "Item",
+                "itemId": "310",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Judas' Shadow",
+                "itemType": "Item",
+                "itemId": "311",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Maggy's Bow",
+                "itemType": "Item",
+                "itemId": "312",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Holy Mantle",
+                "itemType": "Item",
+                "itemId": "313",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Thunder Thighs",
+                "itemType": "Item",
+                "itemId": "314",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Strange Attractor",
+                "itemType": "Item",
+                "itemId": "315",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cursed Eye",
+                "itemType": "Item",
+                "itemId": "316",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mysterious Liquid",
+                "itemType": "Item",
+                "itemId": "317",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Gemini",
+                "itemType": "Item",
+                "itemId": "318",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cain's Other Eye",
+                "itemType": "Item",
+                "itemId": "319",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "???'s Only Friend",
+                "itemType": "Item",
+                "itemId": "320",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Samson's Chains",
+                "itemType": "Item",
+                "itemId": "321",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mongo Baby",
+                "itemType": "Item",
+                "itemId": "322",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Polaroid",
+                "itemType": "Item",
+                "itemId": "327",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Negative",
+                "itemType": "Item",
+                "itemId": "328",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Ludovico Technique",
+                "itemType": "Item",
+                "itemId": "329",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Soy Milk",
+                "itemType": "Item",
+                "itemId": "330",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "GodHead",
+                "itemType": "Item",
+                "itemId": "331",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lazarus' Rags",
+                "itemType": "Item",
+                "itemId": "332",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Mind",
+                "itemType": "Item",
+                "itemId": "333",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Body",
+                "itemType": "Item",
+                "itemId": "334",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Soul",
+                "itemType": "Item",
+                "itemId": "335",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Onion",
+                "itemType": "Item",
+                "itemId": "336",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Watch",
+                "itemType": "Item",
+                "itemId": "337",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Safety Pin",
+                "itemType": "Item",
+                "itemId": "339",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Caffeine Pill",
+                "itemType": "Item",
+                "itemId": "340",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Torn Photo",
+                "itemType": "Item",
+                "itemId": "341",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blue Cap",
+                "itemType": "Item",
+                "itemId": "342",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Latch Key",
+                "itemType": "Item",
+                "itemId": "343",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Match Book",
+                "itemType": "Item",
+                "itemId": "344",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Synthoil",
+                "itemType": "Item",
+                "itemId": "345",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "A Snack",
+                "itemType": "Item",
+                "itemId": "346",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Toxic Shock",
+                "itemType": "Item",
+                "itemId": "350",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bomber Boy",
+                "itemType": "Item",
+                "itemId": "353",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Crack Jacks",
+                "itemType": "Item",
+                "itemId": "354",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Pearls",
+                "itemType": "Item",
+                "itemId": "355",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Car Battery",
+                "itemType": "Item",
+                "itemId": "356",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Wiz",
+                "itemType": "Item",
+                "itemId": "358",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "8 Inch Nails",
+                "itemType": "Item",
+                "itemId": "359",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Incubus",
+                "itemType": "Item",
+                "itemId": "360",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fate's Reward",
+                "itemType": "Item",
+                "itemId": "361",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Chest",
+                "itemType": "Item",
+                "itemId": "362",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sworn Protector",
+                "itemType": "Item",
+                "itemId": "363",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Friend Zone",
+                "itemType": "Item",
+                "itemId": "364",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lost Fly",
+                "itemType": "Item",
+                "itemId": "365",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Scatter Bombs",
+                "itemType": "Item",
+                "itemId": "366",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sticky Bombs",
+                "itemType": "Item",
+                "itemId": "367",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Epiphora",
+                "itemType": "Item",
+                "itemId": "368",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Continuum",
+                "itemType": "Item",
+                "itemId": "369",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mr. Dolly",
+                "itemType": "Item",
+                "itemId": "370",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Curse of The Tower",
+                "itemType": "Item",
+                "itemId": "371",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Charged Baby",
+                "itemType": "Item",
+                "itemId": "372",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Eye",
+                "itemType": "Item",
+                "itemId": "373",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Holy Light!",
+                "itemType": "Item",
+                "itemId": "374",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Host Hat",
+                "itemType": "Item",
+                "itemId": "375",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Restock",
+                "itemType": "Item",
+                "itemId": "376",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bursting Sack",
+                "itemType": "Item",
+                "itemId": "377",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "No. 2",
+                "itemType": "Item",
+                "itemId": "378",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pupula Duplex",
+                "itemType": "Item",
+                "itemId": "379",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pay To Play",
+                "itemType": "Item",
+                "itemId": "380",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eden's Blessing",
+                "itemType": "Item",
+                "itemId": "381",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Gurdy",
+                "itemType": "Item",
+                "itemId": "384",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bumbo",
+                "itemType": "Item",
+                "itemId": "385",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Censer",
+                "itemType": "Item",
+                "itemId": "387",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Key Bum",
+                "itemType": "Item",
+                "itemId": "388",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rune Bag",
+                "itemType": "Item",
+                "itemId": "389",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Seraphim",
+                "itemType": "Item",
+                "itemId": "390",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Betrayal",
+                "itemType": "Item",
+                "itemId": "391",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Zodiac",
+                "itemType": "Item",
+                "itemId": "392",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Serpent's Kiss",
+                "itemType": "Item",
+                "itemId": "393",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Marked",
+                "itemType": "Item",
+                "itemId": "394",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tech X",
+                "itemType": "Item",
+                "itemId": "395",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tractor Beam",
+                "itemType": "Item",
+                "itemId": "397",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "God's Flesh",
+                "itemType": "Item",
+                "itemId": "398",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Maw of The Void",
+                "itemType": "Item",
+                "itemId": "399",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spear of Destiny",
+                "itemType": "Item",
+                "itemId": "400",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Explosivo",
+                "itemType": "Item",
+                "itemId": "401",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Chaos",
+                "itemType": "Item",
+                "itemId": "402",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Spider Mod",
+                "itemType": "Item",
+                "itemId": "403",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Farting Baby",
+                "itemType": "Item",
+                "itemId": "404",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "GB Bug",
+                "itemType": "Item",
+                "itemId": "405",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Purity",
+                "itemType": "Item",
+                "itemId": "407",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Athame",
+                "itemType": "Item",
+                "itemId": "408",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Empty Vessel",
+                "itemType": "Item",
+                "itemId": "409",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Evil Eye",
+                "itemType": "Item",
+                "itemId": "410",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lusty Blood",
+                "itemType": "Item",
+                "itemId": "411",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cambion Conception",
+                "itemType": "Item",
+                "itemId": "412",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Immaculate Conception",
+                "itemType": "Item",
+                "itemId": "413",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "More Options",
+                "itemType": "Item",
+                "itemId": "414",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Crown of Light",
+                "itemType": "Item",
+                "itemId": "415",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Deep Pockets",
+                "itemType": "Item",
+                "itemId": "416",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Succubus",
+                "itemType": "Item",
+                "itemId": "417",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fruit Cake",
+                "itemType": "Item",
+                "itemId": "418",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Powder",
+                "itemType": "Item",
+                "itemId": "420",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Circle of Protection",
+                "itemType": "Item",
+                "itemId": "423",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sack Head",
+                "itemType": "Item",
+                "itemId": "424",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Night Light",
+                "itemType": "Item",
+                "itemId": "425",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Obsessed Fan",
+                "itemType": "Item",
+                "itemId": "426",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "PJs",
+                "itemType": "Item",
+                "itemId": "428",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Head of the Keeper",
+                "itemType": "Item",
+                "itemId": "429",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Papa Fly",
+                "itemType": "Item",
+                "itemId": "430",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Multidimensional Baby",
+                "itemType": "Item",
+                "itemId": "431",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Glitter Bombs",
+                "itemType": "Item",
+                "itemId": "432",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "My Shadow",
+                "itemType": "Item",
+                "itemId": "433",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Loki",
+                "itemType": "Item",
+                "itemId": "435",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Milk!",
+                "itemType": "Item",
+                "itemId": "436",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Binky",
+                "itemType": "Item",
+                "itemId": "438",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Kidney Stone",
+                "itemType": "Item",
+                "itemId": "440",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dark Princes Crown",
+                "itemType": "Item",
+                "itemId": "442",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Apple!",
+                "itemType": "Item",
+                "itemId": "443",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lead Pencil",
+                "itemType": "Item",
+                "itemId": "444",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dog Tooth",
+                "itemType": "Item",
+                "itemId": "445",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dead Tooth",
+                "itemType": "Item",
+                "itemId": "446",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Linger Bean",
+                "itemType": "Item",
+                "itemId": "447",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Shard of Glass",
+                "itemType": "Item",
+                "itemId": "448",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Metal Plate",
+                "itemType": "Item",
+                "itemId": "449",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eye of Greed",
+                "itemType": "Item",
+                "itemId": "450",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tarot Cloth",
+                "itemType": "Item",
+                "itemId": "451",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Varicose Veins",
+                "itemType": "Item",
+                "itemId": "452",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Compound Fracture",
+                "itemType": "Item",
+                "itemId": "453",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Polydactyly",
+                "itemType": "Item",
+                "itemId": "454",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dad's Lost Coin",
+                "itemType": "Item",
+                "itemId": "455",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Moldy Bread",
+                "itemType": "Item",
+                "itemId": "456",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cone Head",
+                "itemType": "Item",
+                "itemId": "457",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Belly Button",
+                "itemType": "Item",
+                "itemId": "458",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sinus Infection",
+                "itemType": "Item",
+                "itemId": "459",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Glaucoma",
+                "itemType": "Item",
+                "itemId": "460",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Parasitoid",
+                "itemType": "Item",
+                "itemId": "461",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eye of Belial",
+                "itemType": "Item",
+                "itemId": "462",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sulfuric Acid",
+                "itemType": "Item",
+                "itemId": "463",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Glyph of Balance",
+                "itemType": "Item",
+                "itemId": "464",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Analog Stick",
+                "itemType": "Item",
+                "itemId": "465",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Contagion",
+                "itemType": "Item",
+                "itemId": "466",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Finger!",
+                "itemType": "Item",
+                "itemId": "467",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Shade",
+                "itemType": "Item",
+                "itemId": "468",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Depression",
+                "itemType": "Item",
+                "itemId": "469",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hushy",
+                "itemType": "Item",
+                "itemId": "470",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Monstro",
+                "itemType": "Item",
+                "itemId": "471",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "King Baby",
+                "itemType": "Item",
+                "itemId": "472",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Big Chubby",
+                "itemType": "Item",
+                "itemId": "473",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tonsil",
+                "itemType": "Item",
+                "itemId": "474",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Acid Baby",
+                "itemType": "Item",
+                "itemId": "491",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "YO LISTEN!",
+                "itemType": "Item",
+                "itemId": "492",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Adrenaline",
+                "itemType": "Item",
+                "itemId": "493",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Jacob's Ladder",
+                "itemType": "Item",
+                "itemId": "494",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ghost Pepper",
+                "itemType": "Item",
+                "itemId": "495",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Euthanasia",
+                "itemType": "Item",
+                "itemId": "496",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Camo Undies",
+                "itemType": "Item",
+                "itemId": "497",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Duality",
+                "itemType": "Item",
+                "itemId": "498",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eucharist",
+                "itemType": "Item",
+                "itemId": "499",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Sack of Sacks",
+                "itemType": "Item",
+                "itemId": "500",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Greed's Gullet",
+                "itemType": "Item",
+                "itemId": "501",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Large Zit",
+                "itemType": "Item",
+                "itemId": "502",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Little Horn",
+                "itemType": "Item",
+                "itemId": "503",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Poke Go",
+                "itemType": "Item",
+                "itemId": "505",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "BackStabber",
+                "itemType": "Item",
+                "itemId": "506",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Razor",
+                "itemType": "Item",
+                "itemId": "508",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bloodshot Eye",
+                "itemType": "Item",
+                "itemId": "509",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Angry Fly",
+                "itemType": "Item",
+                "itemId": "511",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bozo",
+                "itemType": "Item",
+                "itemId": "513",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Modem",
+                "itemType": "Item",
+                "itemId": "514",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fast Bombs",
+                "itemType": "Item",
+                "itemId": "517",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Buddy in a Box",
+                "itemType": "Item",
+                "itemId": "518",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Delirium",
+                "itemType": "Item",
+                "itemId": "519",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Jumper Cables",
+                "itemType": "Item",
+                "itemId": "520",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Technology Zero",
+                "itemType": "Item",
+                "itemId": "524",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Leprosy",
+                "itemType": "Item",
+                "itemId": "525",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "7 Seals",
+                "itemType": "Item",
+                "itemId": "526",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Angelic Prism",
+                "itemType": "Item",
+                "itemId": "528",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pop!",
+                "itemType": "Item",
+                "itemId": "529",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Death's List",
+                "itemType": "Item",
+                "itemId": "530",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Haemolacria",
+                "itemType": "Item",
+                "itemId": "531",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lachryphagy",
+                "itemType": "Item",
+                "itemId": "532",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Trisagion",
+                "itemType": "Item",
+                "itemId": "533",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Schoolbag",
+                "itemType": "Item",
+                "itemId": "534",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blanket",
+                "itemType": "Item",
+                "itemId": "535",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Spewer",
+                "itemType": "Item",
+                "itemId": "537",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Marbles",
+                "itemType": "Item",
+                "itemId": "538",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mystery Egg",
+                "itemType": "Item",
+                "itemId": "539",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Flat Stone",
+                "itemType": "Item",
+                "itemId": "540",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Marrow",
+                "itemType": "Item",
+                "itemId": "541",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Slipped Rib",
+                "itemType": "Item",
+                "itemId": "542",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hallowed Ground",
+                "itemType": "Item",
+                "itemId": "543",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pointy Rib",
+                "itemType": "Item",
+                "itemId": "544",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dad's Ring",
+                "itemType": "Item",
+                "itemId": "546",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Divorce Papers",
+                "itemType": "Item",
+                "itemId": "547",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Jaw Bone",
+                "itemType": "Item",
+                "itemId": "548",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Brittle Bones",
+                "itemType": "Item",
+                "itemId": "549",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Shovel",
+                "itemType": "Item",
+                "itemId": "551",
+                "collectibleType": "Passive"
+            }
+        ],
+        "trinkets": [
+            {
+                "name": "Swallowed Penny",
+                "itemType": "Trinket",
+                "itemId": "1",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Petrified Poop",
+                "itemType": "Trinket",
+                "itemId": "2",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "AAA Battery",
+                "itemType": "Trinket",
+                "itemId": "3",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Remote",
+                "itemType": "Trinket",
+                "itemId": "4",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Purple Heart",
+                "itemType": "Trinket",
+                "itemId": "5",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Magnet",
+                "itemType": "Trinket",
+                "itemId": "6",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rosary Bead",
+                "itemType": "Trinket",
+                "itemId": "7",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cartridge",
+                "itemType": "Trinket",
+                "itemId": "8",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pulse Worm",
+                "itemType": "Trinket",
+                "itemId": "9",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Wiggle Worm",
+                "itemType": "Trinket",
+                "itemId": "10",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ring Worm",
+                "itemType": "Trinket",
+                "itemId": "11",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Flat Worm",
+                "itemType": "Trinket",
+                "itemId": "12",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Store Credit",
+                "itemType": "Trinket",
+                "itemId": "13",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Callus",
+                "itemType": "Trinket",
+                "itemId": "14",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lucky Rock",
+                "itemType": "Trinket",
+                "itemId": "15",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Toenail",
+                "itemType": "Trinket",
+                "itemId": "16",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Lipstick",
+                "itemType": "Trinket",
+                "itemId": "17",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bible Tract",
+                "itemType": "Trinket",
+                "itemId": "18",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Paper Clip",
+                "itemType": "Trinket",
+                "itemId": "19",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Monkey's Paw",
+                "itemType": "Trinket",
+                "itemId": "20",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mysterious Paper",
+                "itemType": "Trinket",
+                "itemId": "21",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Daemon's Tail",
+                "itemType": "Trinket",
+                "itemId": "22",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Missing Poster",
+                "itemType": "Trinket",
+                "itemId": "23",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Butt Penny",
+                "itemType": "Trinket",
+                "itemId": "24",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mysterious Candy",
+                "itemType": "Trinket",
+                "itemId": "25",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hook Worm",
+                "itemType": "Trinket",
+                "itemId": "26",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Whip Worm",
+                "itemType": "Trinket",
+                "itemId": "27",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Broken Ankh",
+                "itemType": "Trinket",
+                "itemId": "28",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fish Head",
+                "itemType": "Trinket",
+                "itemId": "29",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pinky Eye",
+                "itemType": "Trinket",
+                "itemId": "30",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Push Pin",
+                "itemType": "Trinket",
+                "itemId": "31",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Liberty Cap",
+                "itemType": "Trinket",
+                "itemId": "32",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Umbilical Cord",
+                "itemType": "Trinket",
+                "itemId": "33",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Child's Heart",
+                "itemType": "Trinket",
+                "itemId": "34",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Curved Horn",
+                "itemType": "Trinket",
+                "itemId": "35",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rusted Key",
+                "itemType": "Trinket",
+                "itemId": "36",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Goat Hoof",
+                "itemType": "Trinket",
+                "itemId": "37",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Pearl",
+                "itemType": "Trinket",
+                "itemId": "38",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cancer",
+                "itemType": "Trinket",
+                "itemId": "39",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Red Patch",
+                "itemType": "Trinket",
+                "itemId": "40",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Match Stick",
+                "itemType": "Trinket",
+                "itemId": "41",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lucky Toe",
+                "itemType": "Trinket",
+                "itemId": "42",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cursed Skull",
+                "itemType": "Trinket",
+                "itemId": "43",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Safety Cap",
+                "itemType": "Trinket",
+                "itemId": "44",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ace of Spades",
+                "itemType": "Trinket",
+                "itemId": "45",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Isaac's Fork",
+                "itemType": "Trinket",
+                "itemId": "46",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "A Missing Page",
+                "itemType": "Trinket",
+                "itemId": "48",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bloody Penny",
+                "itemType": "Trinket",
+                "itemId": "49",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Burnt Penny",
+                "itemType": "Trinket",
+                "itemId": "50",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Flat Penny",
+                "itemType": "Trinket",
+                "itemId": "51",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Counterfeit Penny",
+                "itemType": "Trinket",
+                "itemId": "52",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tick",
+                "itemType": "Trinket",
+                "itemId": "53",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Isaac's Head",
+                "itemType": "Trinket",
+                "itemId": "54",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Maggy's Faith",
+                "itemType": "Trinket",
+                "itemId": "55",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Judas' Tongue",
+                "itemType": "Trinket",
+                "itemId": "56",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "???'s Soul",
+                "itemType": "Trinket",
+                "itemId": "57",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Samson's Lock",
+                "itemType": "Trinket",
+                "itemId": "58",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cain's Eye",
+                "itemType": "Trinket",
+                "itemId": "59",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Eve's Bird Foot",
+                "itemType": "Trinket",
+                "itemId": "60",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "The Left Hand",
+                "itemType": "Trinket",
+                "itemId": "61",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Shiny Rock",
+                "itemType": "Trinket",
+                "itemId": "62",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Safety Scissors",
+                "itemType": "Trinket",
+                "itemId": "63",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rainbow Worm",
+                "itemType": "Trinket",
+                "itemId": "64",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tape Worm",
+                "itemType": "Trinket",
+                "itemId": "65",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lazy Worm",
+                "itemType": "Trinket",
+                "itemId": "66",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cracked Dice",
+                "itemType": "Trinket",
+                "itemId": "67",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Super Magnet",
+                "itemType": "Trinket",
+                "itemId": "68",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Faded Polaroid",
+                "itemType": "Trinket",
+                "itemId": "69",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Louse",
+                "itemType": "Trinket",
+                "itemId": "70",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bob's Bladder",
+                "itemType": "Trinket",
+                "itemId": "71",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Watch Battery",
+                "itemType": "Trinket",
+                "itemId": "72",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blasting Cap",
+                "itemType": "Trinket",
+                "itemId": "73",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Stud Finder",
+                "itemType": "Trinket",
+                "itemId": "74",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Error",
+                "itemType": "Trinket",
+                "itemId": "75",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Poker Chip",
+                "itemType": "Trinket",
+                "itemId": "76",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blister",
+                "itemType": "Trinket",
+                "itemId": "77",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Second Hand",
+                "itemType": "Trinket",
+                "itemId": "78",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Endless Nameless",
+                "itemType": "Trinket",
+                "itemId": "79",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Feather",
+                "itemType": "Trinket",
+                "itemId": "80",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Blind Rage",
+                "itemType": "Trinket",
+                "itemId": "81",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Golden Horse Shoe",
+                "itemType": "Trinket",
+                "itemId": "82",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Store Key",
+                "itemType": "Trinket",
+                "itemId": "83",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rib of Greed",
+                "itemType": "Trinket",
+                "itemId": "84",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Karma",
+                "itemType": "Trinket",
+                "itemId": "85",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lil Larva",
+                "itemType": "Trinket",
+                "itemId": "86",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Mom's Locket",
+                "itemType": "Trinket",
+                "itemId": "87",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "NO!",
+                "itemType": "Trinket",
+                "itemId": "88",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Child Leash",
+                "itemType": "Trinket",
+                "itemId": "89",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Brown Cap",
+                "itemType": "Trinket",
+                "itemId": "90",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Meconium",
+                "itemType": "Trinket",
+                "itemId": "91",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Cracked Crown",
+                "itemType": "Trinket",
+                "itemId": "92",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Used Diaper",
+                "itemType": "Trinket",
+                "itemId": "93",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fish Tail",
+                "itemType": "Trinket",
+                "itemId": "94",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Black Tooth",
+                "itemType": "Trinket",
+                "itemId": "95",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Ouroboros Worm",
+                "itemType": "Trinket",
+                "itemId": "96",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Tonsil",
+                "itemType": "Trinket",
+                "itemId": "97",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Nose Goblin",
+                "itemType": "Trinket",
+                "itemId": "98",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Super Ball",
+                "itemType": "Trinket",
+                "itemId": "99",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Vibrant Bulb",
+                "itemType": "Trinket",
+                "itemId": "100",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Dim Bulb",
+                "itemType": "Trinket",
+                "itemId": "101",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Fragmented Card",
+                "itemType": "Trinket",
+                "itemId": "102",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Equality!",
+                "itemType": "Trinket",
+                "itemId": "103",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Wish Bone",
+                "itemType": "Trinket",
+                "itemId": "104",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bag Lunch",
+                "itemType": "Trinket",
+                "itemId": "105",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Lost Cork",
+                "itemType": "Trinket",
+                "itemId": "106",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Crow Heart",
+                "itemType": "Trinket",
+                "itemId": "107",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Walnut",
+                "itemType": "Trinket",
+                "itemId": "108",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Duct Tape",
+                "itemType": "Trinket",
+                "itemId": "109",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Silver Dollar",
+                "itemType": "Trinket",
+                "itemId": "110",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bloody Crown",
+                "itemType": "Trinket",
+                "itemId": "111",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Pay To Win",
+                "itemType": "Trinket",
+                "itemId": "112",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Locust of War",
+                "itemType": "Trinket",
+                "itemId": "113",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Locust of Pestilence",
+                "itemType": "Trinket",
+                "itemId": "114",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Locust of Famine",
+                "itemType": "Trinket",
+                "itemId": "115",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Locust of Death",
+                "itemType": "Trinket",
+                "itemId": "116",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Locust of Conquest",
+                "itemType": "Trinket",
+                "itemId": "117",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Bat Wing",
+                "itemType": "Trinket",
+                "itemId": "118",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Stem Cell",
+                "itemType": "Trinket",
+                "itemId": "119",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Hairpin",
+                "itemType": "Trinket",
+                "itemId": "120",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Wooden Cross",
+                "itemType": "Trinket",
+                "itemId": "121",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Butter!",
+                "itemType": "Trinket",
+                "itemId": "122",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Filigree Feather",
+                "itemType": "Trinket",
+                "itemId": "123",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Door Stop",
+                "itemType": "Trinket",
+                "itemId": "124",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Extension Cord",
+                "itemType": "Trinket",
+                "itemId": "125",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Rotten Penny",
+                "itemType": "Trinket",
+                "itemId": "126",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Baby-Bender",
+                "itemType": "Trinket",
+                "itemId": "127",
+                "collectibleType": "Passive"
+            },
+            {
+                "name": "Finger Bone",
+                "itemType": "Trinket",
+                "itemId": "128",
+                "collectibleType": "Passive"
+            }
+        ]
+      }
+      
+    function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+
+      
+
+    function generateRandomEden(number) {
+        const randomActive = items.activeItems[randomIntFromInterval(1,  items.activeItems.length)]
+        const randomPassive = items.passiveItems[randomIntFromInterval(1,  items.passiveItems.length)]
+        return {
+            number,
+            randomActive,
+            randomPassive
+        }
+    }  
+    
+    function generateEdens(int) {
+        let edenArr = [];
+        for (var i = 0; i < int; i++) {
+            edenArr.push(generateRandomEden(i))
+        }
+
+        return edenArr
+    }
+
+    function clearRollField() {
+        let elem = document.querySelector('#roll-field')
+        elem.innerHTML = '';
+    }
+
+    function addEdenToRollField(edenObj) {
+        console.log(edenObj)
+        let elem = document.querySelector('#roll-field')
+        let edenHTML = `\
+        <div class="eden-card">\
+          <p>Active: ${edenObj.randomActive.name}</p>  \
+          <p>Passive: ${edenObj.randomPassive.name}</p>  \
+        </div>\
+        `
+        elem.innerHTML = elem.innerHTML + edenHTML;
+
+    }
+
+
+      
+    const edensOnLoad = generateEdens(3)
+    console.log(edensOnLoad)
+    edensOnLoad.forEach((eden) => {
+        addEdenToRollField(eden)
+    })
+    
+</script>
+      
+  </body>
+  </html>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

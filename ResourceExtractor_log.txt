@@ -1,0 +1,2 @@
+Usage: /Users/willforeman-local/Library/Application Support/Steam/steamapps/common/The Binding of Isaac Rebirth/tools/ResourceExtractor/ResourceExtractor <isaac path> <output path>
+Press ENTER to exit.
