@@ -17,36 +17,42 @@
             }
             .flex-container {
                 background-image: url("public/images/depthsbackdrop.png");
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
                 text-align: center;
-                width: 75vw;
+                width: 90vw;
                 height: 100vh;
+                max-width: 1080px;
             }
 
-              #roll-field {
+            #roll-field {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 height: 261px;
                 margin-top: 15%;
-              }
+            }
             .eden-card {
                 border: 1px solid lightgray;
-                width: 25%;
+                display: flex;
+                flex-direction: column;
+                //justify-content: space-evenly;
+                margin: 10px;
                 text-align: center;
+                width: 25%;
+            }
+            .eden-card .item-window {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: center;
             }
             .eden-card .item {
                 width: 50%;
             }
             .item-names {
-                
                 display: flex;
                 flex-direction: row;
                 justify-content: space-evenly;
-                
             }
             .item p {
                 height: 20px;
@@ -62,16 +68,7 @@
             .eden-card .item-icon {
                 width: 75px;
             }
-            .eden-card .item-window {
-                border: 1px solid white;
-                position: relative;
-                height: 75px;
-                overflow: hidden;
-            }
-            .eden-card .item-window img {
-                position: absolute;
-                left: 30%;
-            }
+
             .hidden {
                 display: none;
             }
@@ -4349,34 +4346,43 @@
     <div class="flex-container">
         <div id="roll-field">
             <div class="eden-card card-0" id="card-0">
-                <div class="item active-item">
-                    <p class="active-text"></p>
-                    <div class="item-window active"></div>
+                <div class="item-window">
+                    <div class="item active-item">
+                        <p class="active-text"></p>
+                        <div class="item-window active"></div>
+                    </div>
+                    <div class="item passive-item">
+                        <p class="passive-text"></p>
+                        <div class="item-window passive"></div>
+                    </div>
                 </div>
-                <div class="item passive-item">
-                    <p class="passive-text"></p>
-                    <div class="item-window passive"></div>
-                </div>
+                <h2>Eden 1</h2>
             </div>
             <div class="eden-card card-1" id="card-1">
-                <div class="item active-item">
-                    <p class="active-text"></p>
-                    <div class="item-window active"></div>
+                <div class="item-window">
+                    <div class="item active-item">
+                        <p class="active-text"></p>
+                        <div class="item-window active"></div>
+                    </div>
+                    <div class="item passive-item">
+                        <p class="passive-text"></p>
+                        <div class="item-window passive"></div>
+                    </div>
                 </div>
-                <div class="item passive-item">
-                    <p class="passive-text"></p>
-                    <div class="item-window passive"></div>
-                </div>
+                <h2>Eden 2</h2>
             </div>
             <div class="eden-card card-2" id="card-2">
-                <div class="item active-item">
-                    <p class="active-text"></p>
-                    <div class="item-window active"></div>
+                <div class="item-window">
+                    <div class="item active-item">
+                        <p class="active-text"></p>
+                        <div class="item-window active"></div>
+                    </div>
+                    <div class="item passive-item">
+                        <p class="passive-text"></p>
+                        <div class="item-window passive"></div>
+                    </div>
                 </div>
-                <div class="item passive-item">
-                    <p class="passive-text"></p>
-                    <div class="item-window passive"></div>
-                </div>
+                <h2>Eden 3</h2>
             </div>
         </div>
         <a href="#" onclick="rollEdens(3)"><img class="roll-button" src="public/images/rollcard.png"></img></a>
